@@ -1,5 +1,5 @@
 ---
-title: "finalproject_p8105"
+title: "Finalproject_Proposal"
 author: "Jenna Mohammed, Pavithra Srinivasan, and Shina Min"
 date: "2023-11-10"
 output: github_document
@@ -7,7 +7,7 @@ output: github_document
 
 ## FINAL PROJECT- P8105
 
-```{r echo=FALSE}
+```{r echo = FALSE}
 group_members =
   data.frame(
   Names = c("Jenna Mohammed", "Shina Min", "Pavithra Srinivasan"),
@@ -26,6 +26,7 @@ knitr::kable(group_members, format = "markdown", col.names = c("Names", "Emails"
 
 ## Intended Final Products
 Creating a website:
+
 * Using Plotly to create graphs comparing the different data sets
 * Pages explaining the background of substance abuse in pregnancy - alcohol consumption and cigarette use in NYC
   - CDC birth defects:https://www.cdc.gov/ncbddd/

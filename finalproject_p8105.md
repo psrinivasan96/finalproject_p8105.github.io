@@ -1,4 +1,4 @@
-finalproject_p8105
+Finalproject_Proposal
 ================
 Jenna Mohammed, Pavithra Srinivasan, and Shina Min
 2023-11-10
@@ -31,15 +31,21 @@ Jenna Mohammed, Pavithra Srinivasan, and Shina Min
 
 ## Intended Final Products
 
-Creating a website: \* Using Plotly to create graphs comparing the
-different data sets \* Pages explaining the background of substance
-abuse in pregnancy - alcohol consumption and cigarette use in NYC - CDC
-birth defects:<https://www.cdc.gov/ncbddd/> \* About page: brief intro
-about Jenna, Shina and PavPerform a statistical analysis of the provided
-data
+Creating a website:
+
+- Using Plotly to create graphs comparing the different data sets
+
+- Pages explaining the background of substance abuse in pregnancy -
+  alcohol consumption and cigarette use in NYC
+
+  - CDC birth defects:<https://www.cdc.gov/ncbddd/>
+
+- About page: brief intro about Jenna, Shina and PavPerform a
+  statistical analysis of the provided data
 
 - All graphs and results in a pdf (specific comparisons stated in
   planned analyses)
+
 - Github repo
 
 ## The anticipated data sources
