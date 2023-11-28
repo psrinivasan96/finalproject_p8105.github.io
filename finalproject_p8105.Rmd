@@ -1,5 +1,5 @@
 ---
-title: "Final_Project_Proposal"
+title: "Finalproject_Proposal"
 author: "Jenna Mohammed, Pavithra Srinivasan, and Shina Min"
 date: "2023-11-10"
 output: github_document
@@ -71,4 +71,5 @@ Creating a website:
   - Run through any coding/knitting issues
   - Ensure everything is finalized to submit and work on in-class presentation doc. 
 
+##Testing github commit...
 
