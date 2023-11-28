@@ -1,7 +1,6 @@
 ---
-title: "Holy cow!"
+title:"Results"
 ---
 
-### I have a webpage!
+###Findings
 
-And I can put all kinds of stuff on it!
