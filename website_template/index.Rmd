@@ -5,3 +5,4 @@ title: "Final_Project"
 ## Looking at NYC Pregnancy Outcomes in relation to Substance Abuse from Conception to Child Birth in 2007
 
 * Interested in looking at how pregnancy outcomes changes among mothers who drank or smoked cigarettes 3 months before conception, and during pregnancy and comparing it to mothers who did not abuse any substances. As a group, we were collectively interested in both Maternal Child Health and Substance Abuse and this was an ideal way to combine those two interests. The demographics, social dynamics, and healthcare system in NYC provide a unique perspective on the outcomes of maternal health and substance abuse. We are interested in learning more about the relationship between substance abuse and pregnancy as it is rampant and detrimental to health outcomes.
+
