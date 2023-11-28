@@ -96,3 +96,5 @@ Creating a website:
   - Run through any coding/knitting issues
   - Ensure everything is finalized to submit and work on in-class
     presentation doc.
+
+\##Testing github commit…
