@@ -1,5 +1,5 @@
 ---
-title: "Finalproject_Proposal"
+title: "Final_Project_Proposal"
 author: "Jenna Mohammed, Pavithra Srinivasan, and Shina Min"
 date: "2023-11-10"
 output: github_document

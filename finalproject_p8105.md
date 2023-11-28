@@ -1,4 +1,4 @@
-Finalproject_Proposal
+Final_Project_Proposal
 ================
 Jenna Mohammed, Pavithra Srinivasan, and Shina Min
 2023-11-10
