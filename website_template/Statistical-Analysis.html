@@ -282,7 +282,40 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<div id="data-cleaning" class="section level3">
+<h3>Data Cleaning</h3>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;tibble&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;readr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;purrr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;stringr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;forcats&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;lubridate&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v dplyr     1.1.2     v readr     2.1.4
+## v forcats   1.0.0     v stringr   1.5.0
+## v ggplot2   3.4.3     v tibble    3.2.1
+## v lubridate 1.9.2     v tidyr     1.3.0
+## v purrr     1.0.1     
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>data_2007 &lt;- read_csv(&quot;data/PRAM_2007_alcohol.csv&quot;)</code></pre>
+<pre><code>## Rows: 17745 Columns: 21
+## -- Column specification --------------------------------------------------------
+## Delimiter: &quot;,&quot;
+## chr (14): Class, Topic, Question, DataSource, Response, Data_Value_Type, Bre...
+## dbl  (6): Year, Data_Value, Low_Confidence_Limit, High_Confidence_Limit, Sam...
+## lgl  (1): Data_Value_Std_Err
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <p>###Findings</p>
+</div>
 
 
 

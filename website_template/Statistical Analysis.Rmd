@@ -2,5 +2,19 @@
 title:"Results"
 ---
 
+### Data Cleaning 
+
+```{r}
+library(tidyverse)
+
+```
+
+```{r}
+
+data_2007 <- read_csv("data/PRAM_2007_alcohol.csv")
+
+```
+
+
 ###Findings
 
