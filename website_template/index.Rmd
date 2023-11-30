@@ -1,5 +1,10 @@
 ---
 title: "Final_Project"
+output: 
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_float: true
 ---
 
 ## Looking at NYC Pregnancy Outcomes in relation to Substance Abuse from Conception to Child Birth in 2007
