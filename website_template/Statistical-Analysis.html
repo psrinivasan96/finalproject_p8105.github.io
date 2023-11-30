@@ -298,28 +298,12 @@ $(document).ready(function () {
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<pre class="r"><code>alcohol_data_2007 &lt;- read_csv(&quot;data/PRAM_2007_alcohol.csv&quot;)</code></pre>
-<pre><code>## Rows: 17745 Columns: 21
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (14): Class, Topic, Question, DataSource, Response, Data_Value_Type, Bre...
-## dbl  (6): Year, Data_Value, Low_Confidence_Limit, High_Confidence_Limit, Sam...
-## lgl  (1): Data_Value_Std_Err
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>tobacco_data_2007 &lt;- read_csv(&quot;data/PRAM_2007_tobacco.csv&quot;)</code></pre>
-<pre><code>## Rows: 9266 Columns: 22
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (15): Class, Topic, Question, DataSource, Response, Data_Value_Type, Bre...
-## dbl  (6): Year, Data_Value, Low_Confidence_Limit, High_Confidence_Limit, Sam...
-## lgl  (1): Data_Value_Std_Err
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>view(alcohol_data_2007)
-view(tobacco_data_2007)</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre class="r"><code>alcohol_data_2007 =
+  read.csv(&quot;~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_alcohol.csv&quot;)
+
+tobacco_data_2007 =
+  read.csv(&quot;~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_tobacco.csv&quot;)</code></pre>
 <p>Cleaning Alcohol data</p>
 <pre class="r"><code>cleaned_alc_2007 &lt;- alcohol_data_2007 |&gt;
   janitor::clean_names() |&gt;

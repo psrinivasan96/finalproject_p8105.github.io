@@ -7,16 +7,16 @@ output:html_document
 
 ```{r}
 library(tidyverse)
+library(dplyr)
 ```
 
 ```{r}
 
-alcohol_data_2007 <- read_csv("data/PRAM_2007_alcohol.csv")
+alcohol_data_2007 =
+  read.csv("~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_alcohol.csv")
 
-tobacco_data_2007 <- read_csv("data/PRAM_2007_tobacco.csv")
-
-view(alcohol_data_2007)
-view(tobacco_data_2007)
+tobacco_data_2007 =
+  read.csv("~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_tobacco.csv")
 
 ```
 
