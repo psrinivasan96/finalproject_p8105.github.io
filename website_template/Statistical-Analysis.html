@@ -282,8 +282,8 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
-<div id="data-cleaning" class="section level3">
-<h3>Data Cleaning</h3>
+<div id="data-cleaning" class="section level1">
+<h1>Data Cleaning</h1>
 <pre class="r"><code>library(tidyverse)</code></pre>
 <pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.1.3</code></pre>
 <pre><code>## Warning: package &#39;tibble&#39; was built under R version 4.1.3</code></pre>
@@ -304,7 +304,7 @@ $(document).ready(function () {
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
 ## i Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<pre class="r"><code>data_2007 &lt;- read_csv(&quot;data/PRAM_2007_alcohol.csv&quot;)</code></pre>
+<pre class="r"><code>alcohol_data_2007 &lt;- read_csv(&quot;data/PRAM_2007_alcohol.csv&quot;)</code></pre>
 <pre><code>## Rows: 17745 Columns: 21
 ## -- Column specification --------------------------------------------------------
 ## Delimiter: &quot;,&quot;
@@ -314,6 +314,25 @@ $(document).ready(function () {
 ## 
 ## i Use `spec()` to retrieve the full column specification for this data.
 ## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>tobacco_data_2007 &lt;- read_csv(&quot;data/PRAM_2007_tobacco.csv&quot;)</code></pre>
+<pre><code>## Rows: 9266 Columns: 22
+## -- Column specification --------------------------------------------------------
+## Delimiter: &quot;,&quot;
+## chr (15): Class, Topic, Question, DataSource, Response, Data_Value_Type, Bre...
+## dbl  (6): Year, Data_Value, Low_Confidence_Limit, High_Confidence_Limit, Sam...
+## lgl  (1): Data_Value_Std_Err
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>view(alcohol_data_2007)
+view(tobacco_data_2007)</code></pre>
+<p>Cleaning Alcohol data</p>
+<pre class="r"><code>cleaned_alc_2007 &lt;- alcohol_data_2007 |&gt;
+  janitor::clean_names() |&gt;
+  select(-data_value_std_err, -geolocation, -data_value_type)|&gt;
+  drop_na(response)
+
+view(cleaned_alc_2007)</code></pre>
 <p>###Findings</p>
 </div>
 
