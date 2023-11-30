@@ -2,5 +2,24 @@
 title:"Results"
 ---
 
+### Data Cleaning 
+
+```{r}
+library(tidyverse)
+
+```
+
+```{r}
+#setwd("C:/Users/jenna/OneDrive/Documents/R/Data Science/Final/finalproject_p8105.github.io/website_template")
+
+
+#data_2007 <- read_csv("./website_template/data/PRAM_2007_alcohol.csv")
+
+read_csv("data/PRAM_2007_alcohol.csv")
+
+#view(data_2007)
+```
+
+
 ###Findings
 
