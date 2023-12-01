@@ -300,12 +300,13 @@ behaviors/experiences before, during, and after birth.</p>
 <div id="data-cleaning" class="section level1">
 <h1>Data Cleaning</h1>
 <pre class="r"><code>library(tidyverse)
-library(dplyr)</code></pre>
+library(dplyr)
+library(ggplot2)</code></pre>
 <pre class="r"><code>#alcohol_data_2007 =
- # read.csv(&quot;~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_alcohol.csv&quot;)
+ # read.csv(&quot;~/Desktop/finalproject_p8105/data/PRAM_2007_alcohol.csv&quot;)
 
 #tobacco_data_2007 =
- # read.csv(&quot;~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_tobacco.csv&quot;)
+ # read.csv(&quot;~/Desktop/finalproject_p8105/data/PRAM_2007_tobacco.csv&quot;)
 
 alcohol_data_2007 = read_csv(&quot;./data/PRAM_2007_alcohol.csv&quot;)</code></pre>
 <pre><code>## Rows: 5515 Columns: 23
@@ -354,12 +355,14 @@ view(cleaned_tobac_2007)</code></pre>
 <p>Cleaning Contraception Data</p>
 <pre class="r"><code>cleaned_contra_2007 &lt;- contraception_data_2007 %&gt;%
   janitor::clean_names() %&gt;%
-  select(-data_value_std_err, -geolocation, -data_value_type) %&gt;%
+  select(-geolocation, -data_value_type) %&gt;%
   drop_na(response)
 
 view(cleaned_contra_2007)</code></pre>
-<div id="variables" class="section level2">
-<h2>Variables</h2>
+</div>
+<div id="variables" class="section level1">
+<h1>## Variables</h1>
+<p>##Comparing Variables</p>
 <div id="alcohol" class="section level3">
 <h3>Alcohol</h3>
 <ul>
@@ -384,7 +387,6 @@ interval</li>
 <li><code>break_out_category_id</code></li>
 <li><code>response_id</code></li>
 </ul>
-</div>
 </div>
 </div>
 

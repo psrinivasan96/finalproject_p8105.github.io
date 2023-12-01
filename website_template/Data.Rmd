@@ -60,7 +60,7 @@ Cleaning Contraception Data
 ```{r}
 cleaned_contra_2007 <- contraception_data_2007 %>%
   janitor::clean_names() %>%
-  select(-data_value_std_err, -geolocation, -data_value_type) %>%
+  select(-geolocation, -data_value_type) %>%
   drop_na(response)
 
 view(cleaned_contra_2007)
@@ -70,36 +70,7 @@ view(cleaned_contra_2007)
 =======
 ##Comparing Variables 
 
-```{r}
-cleaned_alc_2007 |>
-  ggplot(
-    aes(x = response, y = break_out_category)
-    
-  )
 
-cleaned_alc_2007 |>
-  ggplot(aes(x = response, y = , group = question, color = as.factor(question))) +
-  geom_line() +
-  labs(title = "Spaghetti Plot", x = "Timepoint", y = "Value") +
-  theme_minimal()
-
-
-cleaned_alc_2007 |>
-  ggplot(aes(x = response, group = question, fill = as.factor(response))) +
-  stat_count(position = "dodge") +
-  labs(title = "Count of 'Yes' and 'No' Responses", x = "Response", y = "Count") +
-  theme_minimal()
-
-questions_df <- cleaned_alc_2007 |>
-  data.frame(
-    questions = c("Indicator of drinking any alcohol during the past two years")
-  )
-
-questions_df |>
-  ggplot(aes( x = response, y = question))
-
-  
-```
 
 
 
