@@ -27,6 +27,8 @@ library(dplyr)
 alcohol_data_2007 = read_csv("./data/PRAM_2007_alcohol.csv")
 
 tobacco_data_2007 = read_csv("./data/PRAM_2007_alcohol.csv")
+
+contraception_data_2007 = read_csv("./data/PRAM_2007_contraception.csv")
 ```
 
 Cleaning Alcohol data 
@@ -49,6 +51,17 @@ cleaned_tobac_2007 <- tobacco_data_2007|>
   drop_na(response)
 
 view(cleaned_tobac_2007)
+```
+
+Cleaning Contraception Data
+
+```{r}
+cleaned_contra_2007 <- contraception_data_2007 %>%
+  janitor::clean_names() %>%
+  select(-data_value_std_err, -geolocation, -data_value_type) %>%
+  drop_na(response)
+
+view(cleaned_contra_2007)
 ```
 
 ## Variables 

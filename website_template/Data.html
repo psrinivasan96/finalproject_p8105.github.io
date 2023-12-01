@@ -13,7 +13,7 @@
 
 <title>Data.knit</title>
 
-<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -251,13 +251,19 @@ $(document).ready(function () {
   <a href="about.html">About</a>
 </li>
 <li>
-  <a href="mailto:&lt;you@youremail.com&gt;">
+  <a href="index.html">Index</a>
+</li>
+<li>
+  <a href="Data.html">Data</a>
+</li>
+<li>
+  <a href="mailto:&lt;sm5567@cumc.columbi.edu&gt;">
     <span class="fa fa-envelope fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://github.com/psrinivasan96/finalproject_p8105.github.io">
+  <a href="https://psrinivasan96.github.io/finalproject_p8105/">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -302,20 +308,30 @@ library(dplyr)</code></pre>
  # read.csv(&quot;~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_tobacco.csv&quot;)
 
 alcohol_data_2007 = read_csv(&quot;./data/PRAM_2007_alcohol.csv&quot;)</code></pre>
-<pre><code>## Rows: 17745 Columns: 21
+<pre><code>## Rows: 5515 Columns: 23
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
-## chr (14): Class, Topic, Question, DataSource, Response, Data_Value_Type, Bre...
+## chr (16): LocationAbbr, Class, Topic, Question, DataSource, Response, Data_V...
 ## dbl  (6): Year, Data_Value, Low_Confidence_Limit, High_Confidence_Limit, Sam...
 ## lgl  (1): Data_Value_Std_Err
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <pre class="r"><code>tobacco_data_2007 = read_csv(&quot;./data/PRAM_2007_alcohol.csv&quot;)</code></pre>
-<pre><code>## Rows: 17745 Columns: 21
+<pre><code>## Rows: 5515 Columns: 23
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
-## chr (14): Class, Topic, Question, DataSource, Response, Data_Value_Type, Bre...
+## chr (16): LocationAbbr, Class, Topic, Question, DataSource, Response, Data_V...
+## dbl  (6): Year, Data_Value, Low_Confidence_Limit, High_Confidence_Limit, Sam...
+## lgl  (1): Data_Value_Std_Err
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>contraception_data_2007 = read_csv(&quot;./data/PRAM_2007_contraception.csv&quot;)</code></pre>
+<pre><code>## Rows: 12030 Columns: 23
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (16): LocationAbbr, Class, Topic, Question, DataSource, Response, Data_V...
 ## dbl  (6): Year, Data_Value, Low_Confidence_Limit, High_Confidence_Limit, Sam...
 ## lgl  (1): Data_Value_Std_Err
 ## 
@@ -335,6 +351,13 @@ view(cleaned_alc_2007)</code></pre>
   drop_na(response)
 
 view(cleaned_tobac_2007)</code></pre>
+<p>Cleaning Contraception Data</p>
+<pre class="r"><code>cleaned_contra_2007 &lt;- contraception_data_2007 %&gt;%
+  janitor::clean_names() %&gt;%
+  select(-data_value_std_err, -geolocation, -data_value_type) %&gt;%
+  drop_na(response)
+
+view(cleaned_contra_2007)</code></pre>
 <div id="variables" class="section level2">
 <h2>Variables</h2>
 <div id="alcohol" class="section level3">
