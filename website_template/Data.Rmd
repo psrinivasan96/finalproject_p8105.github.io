@@ -3,6 +3,11 @@ title:"Data"
 output:html_document
 ---
 
+# About the Data 
+
+The PRAM dataset stands for the Pregnancy Risk Assessment Monitoring System. It collects state-specific data on maternal behaviors/experiences before, during, and after birth.
+
+
 # Data Cleaning 
 
 ```{r, warning=FALSE, message=FALSE}
