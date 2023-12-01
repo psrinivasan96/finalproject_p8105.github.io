@@ -1,0 +1,50 @@
+---
+title:"Data"
+output:html_document
+---
+
+# Data Cleaning 
+
+```{r}
+library(tidyverse)
+library(dplyr)
+```
+
+```{r}
+
+
+#alcohol_data_2007 =
+ # read.csv("~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_alcohol.csv")
+
+#tobacco_data_2007 =
+ # read.csv("~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_tobacco.csv")
+
+alcohol_data_2007 = read_csv("./data/PRAM_2007_alcohol.csv")
+
+tobacco_data_2007 = read_csv("./data/PRAM_2007_alcohol.csv")
+```
+
+Cleaning Alcohol data 
+
+```{r}
+cleaned_alc_2007 <- alcohol_data_2007 |>
+  janitor::clean_names() |>
+  select(-data_value_std_err, -geolocation, -data_value_type)|>
+  drop_na(response)
+
+view(cleaned_alc_2007)
+```
+
+Cleaning Tobacco Data
+
+```{r}
+cleaned_tobac_2007 <- tobacco_data_2007|>
+  janitor::clean_names() |>
+  select(-data_value_std_err, -geolocation, -data_value_type)|>
+  drop_na(response)
+
+view(cleaned_tobac_2007)
+```
+
+## Variab
+
