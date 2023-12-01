@@ -10,9 +10,9 @@ navbar:
     - text: "Data"
       href: Data.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:<sm5567@cumc.columbi.edu>
     - icon: fa-github fa-lg
-      href: https://psrinivasan96.github.io/finalproject_p8105.github.io/
+      href: https://psrinivasan96.github.io/finalproject_p8105/
 output:
   html_document:
     theme: yeti
