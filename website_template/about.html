@@ -11,7 +11,7 @@
 
 
 
-<title>Data.knit</title>
+<title>About</title>
 
 <script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -29,7 +29,11 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
@@ -218,7 +222,73 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
 
 
 
@@ -228,6 +298,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -269,98 +349,33 @@ $(document).ready(function () {
 
 <div id="header">
 
-
-
-
-</div>
-
-
-<table>
-<tbody>
-<tr class="odd">
-<td>title:“Data”</td>
-</tr>
-<tr class="even">
-<td>output:html_document</td>
-</tr>
-</tbody>
-</table>
-<div id="data-cleaning" class="section level1">
-<h1>Data Cleaning</h1>
-<pre class="r"><code>library(tidyverse)
-library(dplyr)</code></pre>
-<pre class="r"><code>#alcohol_data_2007 =
- # read.csv(&quot;~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_alcohol.csv&quot;)
-
-#tobacco_data_2007 =
- # read.csv(&quot;~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_tobacco.csv&quot;)
-
-alcohol_data_2007 = read_csv(&quot;./data/PRAM_2007_alcohol.csv&quot;)</code></pre>
-<pre><code>## Rows: 17745 Columns: 21
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (14): Class, Topic, Question, DataSource, Response, Data_Value_Type, Bre...
-## dbl  (6): Year, Data_Value, Low_Confidence_Limit, High_Confidence_Limit, Sam...
-## lgl  (1): Data_Value_Std_Err
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>tobacco_data_2007 = read_csv(&quot;./data/PRAM_2007_alcohol.csv&quot;)</code></pre>
-<pre><code>## Rows: 17745 Columns: 21
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (14): Class, Topic, Question, DataSource, Response, Data_Value_Type, Bre...
-## dbl  (6): Year, Data_Value, Low_Confidence_Limit, High_Confidence_Limit, Sam...
-## lgl  (1): Data_Value_Std_Err
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<p>Cleaning Alcohol data</p>
-<pre class="r"><code>cleaned_alc_2007 &lt;- alcohol_data_2007 |&gt;
-  janitor::clean_names() |&gt;
-  select(-data_value_std_err, -geolocation, -data_value_type)|&gt;
-  drop_na(response)
-
-view(cleaned_alc_2007)</code></pre>
-<p>Cleaning Tobacco Data</p>
-<pre class="r"><code>cleaned_tobac_2007 &lt;- tobacco_data_2007|&gt;
-  janitor::clean_names() |&gt;
-  select(-data_value_std_err, -geolocation, -data_value_type)|&gt;
-  drop_na(response)
-
-view(cleaned_tobac_2007)</code></pre>
-<div id="variables" class="section level2">
-<h2>Variables</h2>
-<div id="alcohol" class="section level3">
-<h3>Alcohol</h3>
-<ul>
-<li><code>year</code> refers to the year data was recorded</li>
-<li><code>class</code> refers to ….</li>
-<li><code>topic</code> refers to the topic of the data</li>
-<li><code>question</code> the question that was recorded</li>
-<li><code>data_source</code> where the recorded data came from</li>
-<li><code>response</code> participants response to the question</li>
-<li><code>data_value</code></li>
-<li><code>low_confidence_limit</code> the lower bound of the confidence
-interval</li>
-<li><code>high_confidence-limit</code> the upper bound of the confidence
-interval</li>
-<li><code>sample_size</code></li>
-<li><code>break_out</code></li>
-<li><code>break_out_category</code></li>
-<li><code>class_id</code></li>
-<li><code>question_id</code></li>
-<li><code>location_id</code></li>
-<li><code>break_out_id</code></li>
-<li><code>break_out_category_id</code></li>
-<li><code>response_id</code></li>
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
 </ul>
 </div>
+
+
+
+<h1 class="title toc-ignore">About</h1>
+
+</div>
+
+
+<div id="about-this-site" class="section level3">
+<h3>About this site</h3>
+<p>Sometimes you need to say a bit about the site – how it was made,
+where it’s hosted, where the source code can be found.</p>
+<p>If this is for a project or analysis, I recommend giving some details
+about the R package versions that you used to create the content.</p>
+</div>
+
+
+
 </div>
 </div>
-
-
-
 
 </div>
 
@@ -392,7 +407,41 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
