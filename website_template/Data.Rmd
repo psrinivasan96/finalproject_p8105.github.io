@@ -5,7 +5,7 @@ output:html_document
 
 # Data Cleaning 
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(dplyr)
 ```
@@ -46,5 +46,28 @@ cleaned_tobac_2007 <- tobacco_data_2007|>
 view(cleaned_tobac_2007)
 ```
 
-## Variab
+## Variables 
+
+### Alcohol
+
+- `year`  refers to the year data was recorded
+- `class` refers to ....
+- `topic` refers to the topic of the data
+- `question` the question that was recorded 
+- `data_source` where the recorded data came from
+- `response` participants response to the question 
+- `data_value` 
+- `low_confidence_limit` the lower bound of the confidence interval 
+- `high_confidence-limit` the upper bound of the confidence interval
+- `sample_size`
+- `break_out`
+- `break_out_category`
+- `class_id`
+- `question_id`
+- `location_id`
+- `break_out_id`
+- `break_out_category_id`
+- `response_id`
+
+
 
