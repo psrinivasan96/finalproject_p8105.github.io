@@ -1,5 +1,10 @@
 ---
 title: "Looking at the relationship between Substance Abuse and Pregnancy"
+output: 
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_float: true
 ---
 
 ###Description of our Datasets:
