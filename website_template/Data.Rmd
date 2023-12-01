@@ -20,10 +20,10 @@ library(ggplot2)
 
 
 #alcohol_data_2007 =
- # read.csv("~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_alcohol.csv")
+ # read.csv("~/Desktop/finalproject_p8105/data/PRAM_2007_alcohol.csv")
 
 #tobacco_data_2007 =
- # read.csv("~/Desktop/finalproject_p8105/website_template/data/PRAM_2007_tobacco.csv")
+ # read.csv("~/Desktop/finalproject_p8105/data/PRAM_2007_tobacco.csv")
 
 alcohol_data_2007 = read_csv("./data/PRAM_2007_alcohol.csv")
 
@@ -54,7 +54,7 @@ cleaned_tobac_2007 <- tobacco_data_2007|>
 view(cleaned_tobac_2007)
 ```
 
-<<<<<<< HEAD
+
 Cleaning Contraception Data
 
 ```{r}
@@ -102,7 +102,6 @@ questions_df |>
 ```
 
 
->>>>>>> 28b6f7d23349d9d7b41daa7cbf1e9a171caa9e3f
 
 ### Alcohol
 
