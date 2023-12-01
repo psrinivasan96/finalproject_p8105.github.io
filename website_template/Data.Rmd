@@ -13,6 +13,7 @@ The PRAM dataset stands for the Pregnancy Risk Assessment Monitoring System. It 
 ```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(dplyr)
+library(ggplot2)
 ```
 
 ```{r}
@@ -51,7 +52,40 @@ cleaned_tobac_2007 <- tobacco_data_2007|>
 view(cleaned_tobac_2007)
 ```
 
-## Variables 
+##Comparing Variables 
+
+```{r}
+cleaned_alc_2007 |>
+  ggplot(
+    aes(x = response, y = break_out_category)
+    
+  )
+
+cleaned_alc_2007 |>
+  ggplot(aes(x = response, y = , group = question, color = as.factor(question))) +
+  geom_line() +
+  labs(title = "Spaghetti Plot", x = "Timepoint", y = "Value") +
+  theme_minimal()
+
+
+cleaned_alc_2007 |>
+  ggplot(aes(x = response, group = question, fill = as.factor(response))) +
+  stat_count(position = "dodge") +
+  labs(title = "Count of 'Yes' and 'No' Responses", x = "Response", y = "Count") +
+  theme_minimal()
+
+questions_df <- cleaned_alc_2007 |>
+  data.frame(
+    questions = c("Indicator of drinking any alcohol during the past two years")
+  )
+
+questions_df |>
+  ggplot(aes( x = response, y = question))
+
+  
+```
+
+
 
 ### Alcohol
 
