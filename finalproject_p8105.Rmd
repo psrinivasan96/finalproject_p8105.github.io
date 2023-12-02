@@ -2,7 +2,7 @@
 title: "Finalproject_Proposal"
 author: "Jenna Mohammed, Pavithra Srinivasan, and Shina Min"
 date: "2023-11-10"
-output: github_document
+output: html_document
 ---
 
 ## FINAL PROJECT- P8105
